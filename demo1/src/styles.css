@@ -1,0 +1,232 @@
+/* Global reset and box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Header */
+.header {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .logo h1 {
+    font-size: 24px;
+}
+
+.search-bar input {
+    padding: 8px;
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+.search-bar button {
+    padding: 8px 12px;
+    background-color: #f8b400;
+    border: none;
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    background-color: #e09500;
+}
+
+.header-buttons button {
+    padding: 8px 12px;
+    background-color: #f8b400;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.header-buttons button:hover {
+    background-color: #e09500;
+}
+
+/* Main Content */
+.main-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.main-content h2 {
+    font-size: 28px;
+    color: #333;
+}
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer p {
+    font-size: 14px;
+}
+
+/* Buttons */
+button {
+    padding: 10px 15px;
+    background-color: #f8b400;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #e09500;
+}
+
+/* Sign In and Sign Up Form */
+.signin-form, .signup-form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.signin-form input, .signup-form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.signin-form button, .signup-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #f8b400;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.signin-form button:hover, .signup-form button:hover {
+    background-color: #e09500;
+}
+
+/* Link for Sign Up and Sign In */
+.signup-link, .signin-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.signup-link a, .signin-link a {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #f8b400;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.signup-link a:hover, .signin-link a:hover {
+    background-color: #e09500;
+}
+
+/* Back Button */
+.back-link button {
+    padding: 10px 15px;
+    background-color: #ccc;
+    color: black;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.back-link button:hover {
+    background-color: #999;
+}
+
+/* Cart Button */
+#nav-cart {
+    display: flex;
+    align-items: center;
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+}
+
+#nav-cart-count-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+#nav-cart-count {
+    background-color: #f08804;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 0 5px;
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    left: 20px;
+}
+
+.nav-cart-icon {
+    width: 50px;
+    height: 50px;
+    background-image: url('cart.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.nav-cart-sprite {
+    display: block;
+}
+
+#nav-cart:hover #nav-cart-count {
+    background-color: #d77800;
+}
+
+/* Footer Position Adjustments */
+footer {
+    position: relative;
+    bottom: auto;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-buttons {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .signin-form, .signup-form {
+        max-width: 90%;
+    }
+}
