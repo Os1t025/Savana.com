@@ -1,4 +1,4 @@
-CREATE TABLE Movies (
+CREATE TABLE Music (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100),
     price DECIMAL(10, 2),
@@ -8,7 +8,7 @@ CREATE TABLE Movies (
     image_path VARCHAR(255)
 );
 
-INSERT INTO Movies (name, price, description, genre, artist, image_path) 
+INSERT INTO Music (name, price, description, genre, artist, image_path) 
 VALUES 
 ('A March Into Water', 19.99, 'A powerful rock album with intense guitar riffs and emotional lyrics.', 'Rock', 'Pierce The Veil', 'Image/music/MU001.jpeg'),
 ('Voices', 19.99, 'A heavy rock album with dark and haunting themes.', 'Rock', 'Motionless In White', 'Image/music/MU002.jpeg'),
