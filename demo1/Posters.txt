@@ -1,34 +1,35 @@
 CREATE TABLE Posters (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100),
+    price DECIMAL(5,2),
     description TEXT,
     genre VARCHAR(50),
     artist VARCHAR(100),
     image_path VARCHAR(255)
 );
 
-INSERT INTO Posters (name, description, genre, artist, image_path) 
+INSERT INTO Posters (name, price, description, genre, artist, image_path) 
 VALUES 
-('Rock Poster 1', 'A striking poster featuring Pierce The Veil, capturing the intense energy of their live performances.', 'Rock', 'Pierce The Veil', 'Image/posters/PS001.jpeg'),
-('Rock Poster 2', 'A dark and atmospheric poster showcasing the haunting visuals of Motionless In White.', 'Rock', 'Motionless In White', 'Image/posters/PS002.jpeg'),
-('Rock Poster 3', 'A powerful and emotional poster that embodies the raw energy and emotional depth of Bad Omens.', 'Rock', 'Bad Omens', 'Image/posters/PS003.jpeg'),
-('Rock Poster 4', 'A vibrant and dynamic poster that reflects the high-energy vibe of Sleeping With Sirens.', 'Rock', 'Sleeping With Sirens', 'Image/posters/PS004.jpeg'),
-('Rock Poster 5', 'A bold and intense poster featuring the legendary rock band Three Days Grace, known for their powerful anthems.', 'Rock', 'Three Days Grace', 'Image/posters/PS005.jpeg'),
+('Rock Poster 1', 9.99, 'A striking poster featuring Pierce The Veil, capturing the intense energy of their live performances.', 'Rock', 'Pierce The Veil', 'Image/posters/PS001.jpeg'),
+('Rock Poster 2', 9.99, 'A dark and atmospheric poster showcasing the haunting visuals of Motionless In White.', 'Rock', 'Motionless In White', 'Image/posters/PS002.jpeg'),
+('Rock Poster 3', 9.99, 'A powerful and emotional poster that embodies the raw energy and emotional depth of Bad Omens.', 'Rock', 'Bad Omens', 'Image/posters/PS003.jpeg'),
+('Rock Poster 4', 9.99, 'A vibrant and dynamic poster that reflects the high-energy vibe of Sleeping With Sirens.', 'Rock', 'Sleeping With Sirens', 'Image/posters/PS004.jpeg'),
+('Rock Poster 5', 9.99, 'A bold and intense poster featuring the legendary rock band Three Days Grace, known for their powerful anthems.', 'Rock', 'Three Days Grace', 'Image/posters/PS005.jpeg'),
 
-('Pop Poster 1', 'A sleek and stylish poster of The Weeknd, capturing his unique pop aesthetics and haunting melodies.', 'Pop', 'The Weeknd', 'Image/posters/PS006.jpeg'),
-('Pop Poster 2', 'A soulful and reflective poster featuring Hozier, celebrating his poetic lyrics and soulful sound.', 'Pop', 'Hozier', 'Image/posters/PS007.jpeg'),
-('Pop Poster 3', 'A vibrant poster showcasing the eclectic pop artist Post Malone, blending genres and creating his own signature style.', 'Pop', 'Post Malone', 'Image/posters/PS008.jpeg'),
-('Pop Poster 4', 'An iconic and extravagant poster of Lady Gaga, highlighting her bold, experimental pop persona.', 'Pop', 'Lady Gaga', 'Image/posters/PS009.jpeg'),
-('Pop Poster 5', 'A fun and colorful poster featuring Bruno Mars, bringing his upbeat, funky energy to life.', 'Pop', 'Bruno Mars', 'Image/posters/PS010.jpeg'),
+('Pop Poster 1', 9.99, 'A sleek and stylish poster of The Weeknd, capturing his unique pop aesthetics and haunting melodies.', 'Pop', 'The Weeknd', 'Image/posters/PS006.jpeg'),
+('Pop Poster 2', 9.99, 'A soulful and reflective poster featuring Hozier, celebrating his poetic lyrics and soulful sound.', 'Pop', 'Hozier', 'Image/posters/PS007.jpeg'),
+('Pop Poster 3', 9.99, 'A vibrant poster showcasing the eclectic pop artist Post Malone, blending genres and creating his own signature style.', 'Pop', 'Post Malone', 'Image/posters/PS008.jpeg'),
+('Pop Poster 4', 9.99, 'An iconic and extravagant poster of Lady Gaga, highlighting her bold, experimental pop persona.', 'Pop', 'Lady Gaga', 'Image/posters/PS009.jpeg'),
+('Pop Poster 5', 9.99, 'A fun and colorful poster featuring Bruno Mars, bringing his upbeat, funky energy to life.', 'Pop', 'Bruno Mars', 'Image/posters/PS010.jpeg'),
 
-('R&B Poster 1', 'A smooth and intimate poster of Daniel Caesar, reflecting his soulful R&B melodies and heartfelt lyrics.', 'R&B', 'Daniel Caesar', 'Image/posters/PS011.jpeg'),
-('R&B Poster 2', 'A soulful and mellow poster featuring SIR, capturing his deeply emotional and reflective R&B style.', 'R&B', 'SIR', 'Image/posters/PS012.jpeg'),
-('R&B Poster 3', 'A moody and introspective poster of Brent Faiyaz, highlighting his unique blend of R&B and alternative vibes.', 'R&B', 'Brent Faiyaz', 'Image/posters/PS013.jpeg'),
-('R&B Poster 4', 'A seductive and atmospheric poster featuring Partynextdoor, known for his late-night R&B soundscapes.', 'R&B', 'Partynextdoor', 'Image/posters/PS014.jpeg'),
-('R&B Poster 5', 'A poignant and expressive poster of Giveon, showcasing his deep baritone voice and emotional vulnerability.', 'R&B', 'Giveon', 'Image/posters/PS015.jpeg'),
+('R&B Poster 1', 9.99, 'A smooth and intimate poster of Daniel Caesar, reflecting his soulful R&B melodies and heartfelt lyrics.', 'R&B', 'Daniel Caesar', 'Image/posters/PS011.jpeg'),
+('R&B Poster 2', 9.99, 'A soulful and mellow poster featuring SIR, capturing his deeply emotional and reflective R&B style.', 'R&B', 'SIR', 'Image/posters/PS012.jpeg'),
+('R&B Poster 3', 9.99, 'A moody and introspective poster of Brent Faiyaz, highlighting his unique blend of R&B and alternative vibes.', 'R&B', 'Brent Faiyaz', 'Image/posters/PS013.jpeg'),
+('R&B Poster 4', 9.99, 'A seductive and atmospheric poster featuring Partynextdoor, known for his late-night R&B soundscapes.', 'R&B', 'Partynextdoor', 'Image/posters/PS014.jpeg'),
+('R&B Poster 5', 9.99, 'A poignant and expressive poster of Giveon, showcasing his deep baritone voice and emotional vulnerability.', 'R&B', 'Giveon', 'Image/posters/PS015.jpeg'),
 
-('Rap Poster 1', 'A powerful poster of Kendrick Lamar, highlighting his thought-provoking lyrics and impactful storytelling.', 'Rap', 'Kendrick Lamar', 'Image/posters/PS016.jpeg'),
-('Rap Poster 2', 'An electrifying and futuristic poster of Travis Scott, reflecting his genre-defying rap style and creative vision.', 'Rap', 'Travis Scott', 'Image/posters/PS017.jpeg'),
-('Rap Poster 3', 'A heartfelt and melancholic poster of Juice WRLD, encapsulating his emotional depth and vulnerability in his music.', 'Rap', 'Juice WRLD', 'Image/posters/PS018.jpeg'),
-('Rap Poster 4', 'A reflective and powerful poster featuring J. Cole, known for his introspective and socially conscious rap.', 'Rap', 'J. Cole', 'Image/posters/PS019.jpeg'),
-('Rap Poster 5', 'A gritty and raw poster of 21 Savage, highlighting his streetwise lyrics and intense delivery.', 'Rap', '21 Savage', 'Image/posters/PS020.jpeg');
+('Rap Poster 1', 9.99, 'A powerful poster of Kendrick Lamar, highlighting his thought-provoking lyrics and impactful storytelling.', 'Rap', 'Kendrick Lamar', 'Image/posters/PS016.jpeg'),
+('Rap Poster 2', 9.99, 'An electrifying and futuristic poster of Travis Scott, reflecting his genre-defying rap style and creative vision.', 'Rap', 'Travis Scott', 'Image/posters/PS017.jpeg'),
+('Rap Poster 3', 9.99, 'A heartfelt and melancholic poster of Juice WRLD, encapsulating his emotional depth and vulnerability in his music.', 'Rap', 'Juice WRLD', 'Image/posters/PS018.jpeg'),
+('Rap Poster 4', 9.99, 'A reflective and powerful poster featuring J. Cole, known for his introspective and socially conscious rap.', 'Rap', 'J. Cole', 'Image/posters/PS019.jpeg'),
+('Rap Poster 5', 9.99, 'A gritty and raw poster of 21 Savage, highlighting his streetwise lyrics and intense delivery.', 'Rap', '21 Savage', 'Image/posters/PS020.jpeg');
