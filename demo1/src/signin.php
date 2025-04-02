@@ -5,7 +5,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $username = $_POST['username'];
         $password = $_POST['password'];
 
-        // use cases of username exist, password verification, and none blanks
         $check_user_sql = "SELECT * FROM Users WHERE username=?";
         $stmt = $conn->prepare($check_user_sql);
         $stmt->bind_param("s", $username);
@@ -15,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $user = $result->fetch_assoc();
 
             if (password_verify($password, $user['password'])) {
-                session_start();
+                session_start(); // Start the session
                 $_SESSION['username'] = $username;
                 $_SESSION['user_id'] = $user['id']; 
                 header("Location: index.php");
@@ -33,6 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Error: Both fields are required.";
     }
 }
+
 ?>
 <!-- start of html for signin -->
 <!DOCTYPE html>
