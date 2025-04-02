@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "Ositopop#23"; //add your root password
+$password = "YourPassword"; //add your root password
 $dbname = "savana";        //add the database name, I called mine savana
 
 $conn = new mysqli($servername, $username, $password, $dbname);
