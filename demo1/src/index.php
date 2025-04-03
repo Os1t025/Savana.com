@@ -11,7 +11,7 @@
         <div class="row">
             <?php
             // Dont forget to change password
-            $conn = new mysqli('localhost', 'root', 'Yourpassword', 'savana');
+            $conn = new mysqli('localhost', 'root', 'mcduruji', 'Savana');
             if ($conn->connect_error) {
                 die("Connection failed: " . $conn->connect_error);
             }
@@ -45,7 +45,7 @@
         <div class="row">
             <?php
             // Dont forget to change password
-            $conn = new mysqli('localhost', 'root', 'Yourpassword', 'savana');
+            $conn = new mysqli('localhost', 'root', 'mcduruji', 'savana');
             if ($conn->connect_error) {
                 die("Connection failed: " . $conn->connect_error);
             }
@@ -79,7 +79,7 @@
         <div class="row">
             <?php
             // Dont forget to change password
-            $conn = new mysqli('localhost', 'root', 'Yourpassword', 'savana');
+            $conn = new mysqli('localhost', 'root', 'mcduruji', 'savana');
             if ($conn->connect_error) {
                 die("Connection failed: " . $conn->connect_error);
             }
@@ -113,7 +113,7 @@
         <div class="row">
             <?php
             // Dont forget to change password
-            $conn = new mysqli('localhost', 'root', 'Yourpassword', 'savana');
+            $conn = new mysqli('localhost', 'root', 'mcduruji', 'savana');
             if ($conn->connect_error) {
                 die("Connection failed: " . $conn->connect_error);
             }

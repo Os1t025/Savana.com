@@ -82,7 +82,7 @@ function addToCart() {
 
 <style>
 .movie-slideshow {
-    overflow: hidden; /* Important for slideshow effect */
+    overflow: scroll; /* Important for slideshow effect */
 }
 
 .movie-slideshow-container {

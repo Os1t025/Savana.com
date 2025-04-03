@@ -7,7 +7,7 @@
         <div class="row">
             <?php
             // change password
-            $conn = new mysqli('localhost', 'root', 'Yourpassword', 'savana');
+            $conn = new mysqli('localhost', 'root', 'mcduruji', 'savana');
             if ($conn->connect_error) {
                 die("Connection failed: " . $conn->connect_error);
             }
@@ -41,7 +41,7 @@
         <div class="row">
             <?php
             // change password
-            $conn = new mysqli('localhost', 'root', 'Yourpassword', 'savana');
+            $conn = new mysqli('localhost', 'root', 'mcduruji', 'savana');
             if ($conn->connect_error) {
                 die("Connection failed: " . $conn->connect_error);
             }
@@ -53,7 +53,7 @@
                 while($movie = $result->fetch_assoc()) {
                     echo '<div class="col">';
                     echo '<a href="movie_details.php?id=' . $movie['id'] . '">';
-                    echo '<img src="Images/Movies/' . basename($movie['movie_image']) . '" alt="' . $movie['movie_name'] . '" class="product-image">'; // Correct path
+                    echo '<img src="Image/Movies/' . basename($movie['movie_image']) . '" alt="' . $movie['movie_name'] . '" class="product-image">'; // Correct path
                     echo '<h4>' . $movie['movie_name'] . '</h4>';
                     echo '<p>' . $movie['genre'] . '</p>';
                     echo '<p>$' . $movie['price'] . '</p>';
@@ -75,7 +75,7 @@
         <div class="row">
             <?php
             // change password
-            $conn = new mysqli('localhost', 'root', 'Yourpassword', 'savana');
+            $conn = new mysqli('localhost', 'root', 'mduruji', 'savana');
             if ($conn->connect_error) {
                 die("Connection failed: " . $conn->connect_error);
             }
@@ -109,7 +109,7 @@
         <div class="row">
             <?php
             // change password
-            $conn = new mysqli('localhost', 'root', 'Yourpassword', 'savana');
+            $conn = new mysqli('localhost', 'root', 'mcduruji', 'savana');
             if ($conn->connect_error) {
                 die("Connection failed: " . $conn->connect_error);
             }
