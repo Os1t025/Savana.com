@@ -371,6 +371,9 @@ button:hover {
 /* Section layout for content */
 .section {
     margin-bottom: 30px;
+    overflow-x: auto; /* Horizontal scroll */
+    white-space: nowrap; /* Prevent wrapping */
+    padding: 10px 0;
 }
 
 /* Row layout for flexible image wrapping */
