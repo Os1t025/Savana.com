@@ -48,8 +48,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             echo "Error: " . $stmt->error;
         }
-    } else {
-        echo "Error: All fields are required.";
-    }
+    } 
 }
 ?>
