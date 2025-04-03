@@ -1,23 +1,25 @@
 <?php
+session_start();
 include('database.php');
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['username'], $_POST['password'])) {
         $username = $_POST['username'];
         $password = $_POST['password'];
 
-        $check_user_sql = "SELECT * FROM Users WHERE username=?";
+        $check_user_sql = "SELECT * FROM users WHERE username=?";
         $stmt = $conn->prepare($check_user_sql);
         $stmt->bind_param("s", $username);
         $stmt->execute();
         $result = $stmt->get_result();
+
         if ($result->num_rows > 0) {
             $user = $result->fetch_assoc();
 
             if (password_verify($password, $user['password'])) {
-                session_start(); // Start the session
                 $_SESSION['username'] = $username;
-                $_SESSION['user_id'] = $user['id']; 
-                header("Location: index.php");
+                $_SESSION['user_id'] = $user['user_id']; 
+                header("Location: top.php"); 
                 exit();
             } else {
                 echo "Error: Incorrect password.";
@@ -32,9 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Error: Both fields are required.";
     }
 }
-
 ?>
-<!-- start of html for signin -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,7 +61,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <div class="signup-link">
             <p>New to Savana?</p>
-            <!-- link to signup page -->
             <a href="signup.php" class="btn">Create your Savana account</a>
         </div>
     </div>
