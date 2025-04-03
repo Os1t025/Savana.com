@@ -1,8 +1,8 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "yourpassword"; //add your root password
-$dbname = "savana";        //add the database name, I called mine savana
+$password = "mcduruji"; //add your root password
+$dbname = "Savana";        //add the database name, I called mine savana
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
