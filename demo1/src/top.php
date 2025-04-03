@@ -34,7 +34,6 @@ session_start();
         </div>
         <div class="header-buttons">
             <?php if (isset($_SESSION['username'])): ?>
-                
                 <a href="profile.php">
                     <button class="profile-btn">
                         Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>
@@ -55,8 +54,20 @@ session_start();
             <?php endif; ?>
         </div>
     </header>
+
+    <!-- Add some content here for logged-in users -->
+    <div class="content">
+        <?php if (isset($_SESSION['username'])): ?>
+            <h2>Welcome back, <?php echo htmlspecialchars($_SESSION['username']); ?>!</h2>
+            <p>Explore our products, manage your account, or check out the latest deals!</p>
+            <?php include('index2.php'); ?>
+        <?php else: ?>
+        <?php endif; ?>
+    </div>
+
 </body>
 </html>
+
 
 
 

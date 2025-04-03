@@ -1,16 +1,12 @@
-<?php include('top.php'); ?>
 
 <div class="main-content">
     <h2>Welcome to Savana!</h2>
-    <p>Explore our collection of books, posters, movies, and music.</p>
-    <a href="signup.php" class="btn">New to Savana? Create your account</a>
-
     <!-- Books Section -->
     <div class="section">
         <h3>Books</h3>
         <div class="row">
             <?php
-            // Dont forget to change password
+            // change password
             $conn = new mysqli('localhost', 'root', 'Yourpassword', 'savana');
             if ($conn->connect_error) {
                 die("Connection failed: " . $conn->connect_error);
@@ -44,7 +40,7 @@
         <h3>Movies</h3>
         <div class="row">
             <?php
-            // Dont forget to change password
+            // change password
             $conn = new mysqli('localhost', 'root', 'Yourpassword', 'savana');
             if ($conn->connect_error) {
                 die("Connection failed: " . $conn->connect_error);
@@ -78,7 +74,7 @@
         <h3>Music</h3>
         <div class="row">
             <?php
-            // Dont forget to change password
+            // change password
             $conn = new mysqli('localhost', 'root', 'Yourpassword', 'savana');
             if ($conn->connect_error) {
                 die("Connection failed: " . $conn->connect_error);
@@ -91,7 +87,7 @@
                 while($music = $result->fetch_assoc()) {
                     echo '<div class="col">';
                     echo '<a href="music_details.php?id=' . $music['id'] . '">';
-                    echo '<img src="Images/Music/' . basename($music['image_path']) . '" alt="' . $music['name'] . '" class="product-image">'; // Correct path
+                    echo '<img src="Images/Music/' . basename($music['image_path']) . '" alt="' . $music['name'] . '" class="product-image">';
                     echo '<h4>' . $music['name'] . '</h4>';
                     echo '<p>' . $music['artist'] . '</p>';
                     echo '<p>$' . $music['price'] . '</p>';
@@ -112,7 +108,7 @@
         <h3>Posters</h3>
         <div class="row">
             <?php
-            // Dont forget to change password
+            // change password
             $conn = new mysqli('localhost', 'root', 'Yourpassword', 'savana');
             if ($conn->connect_error) {
                 die("Connection failed: " . $conn->connect_error);
@@ -125,7 +121,7 @@
                 while($poster = $result->fetch_assoc()) {
                     echo '<div class="col">';
                     echo '<a href="poster_details.php?id=' . $poster['id'] . '">';
-                    echo '<img src="Images/Posters/' . basename($poster['image_path']) . '" alt="' . $poster['name'] . '" class="product-image">'; // Correct path
+                    echo '<img src="Images/Posters/' . basename($poster['image_path']) . '" alt="' . $poster['name'] . '" class="product-image">';
                     echo '<h4>' . $poster['name'] . '</h4>';
                     echo '<p>' . $poster['artist'] . '</p>';
                     echo '<p>$' . $poster['price'] . '</p>';
@@ -144,5 +140,3 @@
 </div>
 
 <?php include('bottom.php'); ?>
-
-
