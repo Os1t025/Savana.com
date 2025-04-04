@@ -2,7 +2,7 @@
 // Database connection setup
 $servername = "localhost";
 $username = "root";
-$password = "mcduruji";
+$password = "yourpassword";
 $dbname = "Savana";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -28,7 +28,7 @@ if ($result->num_rows > 0) {
         $movieTitle = htmlspecialchars($row["movie_name"]);
         $imagePath = htmlspecialchars($row["movie_image"]);
 
-        echo '<a href="movie_details.php?id=' . $movieId . '" class="movie-card">'; // Link to movie_details.php
+        echo '<a href="movie_details.php?id=' . $movieId . '" class="movie-card">';
         echo '<img src="' . $imagePath . '" alt="' . $movieTitle . '">';
         echo '<p>' . $movieTitle . '</p>';
         echo '</a>';

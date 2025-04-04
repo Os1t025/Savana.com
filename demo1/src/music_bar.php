@@ -2,7 +2,7 @@
 // Database connection setup
 $servername = "localhost";
 $username = "root";
-$password = "mcduruji";
+$password = "yourpassword";
 $dbname = "Savana";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -12,7 +12,7 @@ if ($conn->connect_error) {
 }
 
 // Query to retrieve music data
-$sql = "SELECT id, title, song_image FROM music LIMIT 20"; // Updated column names
+$sql = "SELECT id, name, image_path FROM music LIMIT 20";
 $result = $conn->query($sql);
 
 if (!$result) {
@@ -20,15 +20,15 @@ if (!$result) {
 }
 
 if ($result->num_rows > 0) {
-    echo '<div class="music-scroll-bar">'; // Changed class name for clarity
-    echo '<div class="music-scroll-container">'; // Changed class name for clarity
+    echo '<div class="music-scroll-bar">';
+    echo '<div class="music-scroll-container">';
 
     while ($row = $result->fetch_assoc()) {
-        $musicId = $row["id"]; // Changed variable name for clarity
-        $musicTitle = htmlspecialchars($row["title"]); // Updated column name
-        $imagePath = htmlspecialchars($row["song_image"]); // Updated column name
+        $musicId = $row["id"];
+        $musicTitle = htmlspecialchars($row["name"]); 
+        $imagePath = htmlspecialchars($row["image_path"]);
 
-        echo '<a href="music_details.php?id=' . $musicId . '" class="music-card">'; // Link to music_details.php
+        echo '<a href="music_details.php?id=' . $musicId . '" class="music-card">';
         echo '<img src="' . $imagePath . '" alt="' . $musicTitle . '">';
         echo '<p>' . $musicTitle . '</p>';
         echo '</a>';
@@ -37,24 +37,25 @@ if ($result->num_rows > 0) {
     echo '</div>';
     echo '</div>';
 } else {
-    echo "<p>No music found.</p>"; // Changed message for clarity
+    echo "<p>No music found.</p>";
 }
 
 $conn->close();
 ?>
 
+
 <style>
-.music-scroll-bar { /* Changed class name for clarity */
+.music-scroll-bar { 
     overflow-x: auto;
     white-space: nowrap;
     padding: 10px 0;
 }
 
-.music-scroll-container { /* Changed class name for clarity */
+.music-scroll-container { 
     display: inline-flex;
 }
 
-.music-card { /* Changed class name for clarity */
+.music-card { 
     flex: 0 0 auto;
     margin: 10px;
     border: 1px solid #ccc;
@@ -66,14 +67,14 @@ $conn->close();
     color: inherit;
 }
 
-.music-card p { /* Changed class name for clarity */
+.music-card p { 
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 180px;
 }
 
-.music-card img { /* Changed class name for clarity */
+.music-card img { 
     max-width: 100%;
     height: auto;
 }

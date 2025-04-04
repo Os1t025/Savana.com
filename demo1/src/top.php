@@ -22,6 +22,25 @@ session_start();
             window.location.href = 'logout.php'; 
         }
     </script>
+
+<style>
+    .content {
+        text-align: center; 
+        margin-top: 50px;  
+    }
+
+    .welcome-message {
+        font-size: 24px;   
+        font-weight: bold; 
+        color: #333;       
+    }
+
+    .explore-message {
+        font-size: 18px;   
+        color: #666;      
+    }
+</style>
+
 </head>
 <body>
     <header class="header">
@@ -57,13 +76,15 @@ session_start();
 
     <!-- Add some content here for logged-in users -->
     <div class="content">
-        <?php if (isset($_SESSION['username'])): ?>
-            <h2>Welcome back, <?php echo htmlspecialchars($_SESSION['username']); ?>!</h2>
-            <p>Explore our products, manage your account, or check out the latest deals!</p>
-            <?php include('index2.php'); ?>
-        <?php else: ?>
-        <?php endif; ?>
-    </div>
+    <?php if (isset($_SESSION['username'])): ?>
+        <h2 class="welcome-message">Welcome back, <?php echo htmlspecialchars($_SESSION['username']); ?>!</h2>
+        <p class="explore-message">Explore our products, manage your account, or check out the latest deals!</p>
+        <?php include('index2.php'); ?>
+    <?php else: ?>
+    <?php endif; ?>
+</div>
+
+
 
 </body>
 </html>
