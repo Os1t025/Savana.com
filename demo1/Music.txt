@@ -1,35 +1,33 @@
-CREATE TABLE Music (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(100),
-    price DECIMAL(10, 2),
-    description TEXT,
-    genre VARCHAR(50),
-    artist VARCHAR(100),
-    image_path VARCHAR(255)
+DROP TABLE Music;
+CREATE TABLE music (
+    id INT NOT NULL UNIQUE AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(250) NOT NULL,
+    artist VARCHAR(250) NOT NULL,
+    price DECIMAL(10,2) NOT NULL,
+    description TEXT NOT NULL,
+    genre VARCHAR(250) NOT NULL,
+    release_date DATE NOT NULL,
+    image_path VARCHAR(250) NOT NULL UNIQUE
 );
 
-INSERT INTO Music (name, price, description, genre, artist, image_path) 
-VALUES 
-('A March Into Water', 19.99, 'A powerful rock album with intense guitar riffs and emotional lyrics.', 'Rock', 'Pierce The Veil', 'Image/music/MU001.jpeg'),
-('Voices', 19.99, 'A heavy rock album with dark and haunting themes.', 'Rock', 'Motionless In White', 'Image/music/MU002.jpeg'),
-('V.A.N', 19.99, 'An album blending hard rock with emotional melodies and raw lyrics.', 'Rock', 'Bad Omens', 'Image/music/MU003.jpeg'),
-('If You Can\'t Hang', 19.99, 'A post-hardcore album that mixes high-energy music with heartfelt vocals.', 'Rock', 'Sleeping With Sirens', 'Image/music/MU004.jpeg'),
-('Painkiller', 19.99, 'An album that explores pain and healing, featuring powerful rock anthems.', 'Rock', 'Three Days Grace', 'Image/music/MU005.jpeg'),
-
-('Save Your Tears', 19.99, 'A pop album with catchy melodies and deep emotional themes.', 'Pop', 'The Weeknd', 'Image/music/MU006.jpeg'),
-('Take Me to Church', 19.99, 'A pop song with powerful lyrics that touch on themes of love and faith.', 'Pop', 'Hozier', 'Image/music/MU007.jpeg'),
-('Hollywood\'s Bleeding', 19.99, 'A pop album that blends rock, rap, and pop with introspective themes.', 'Pop', 'Post Malone', 'Image/music/MU008.jpeg'),
-('Just Dance', 19.99, 'A fun and energetic pop anthem that gets you dancing.', 'Pop', 'Lady Gaga', 'Image/music/MU009.jpeg'),
-('Uptown Funk', 19.99, 'A funky and vibrant pop song that combines energetic beats with catchy lyrics.', 'Pop', 'Bruno Mars', 'Image/music/MU010.jpeg'),
-
-('Are U Ok', 19.99, 'An R&B album with smooth melodies and introspective lyrics.', 'R&B', 'Daniel Caesar', 'Image/music/MU011.jpeg'),
-('LA', 19.99, 'A soulful R&B album that mixes smooth vocals with deep emotions.', 'R&B', 'SIR', 'Image/music/MU012.jpeg'),
-('Rolling Stone', 19.99, 'A modern R&B album blending smooth beats and reflective lyrics.', 'R&B', 'Brent Faiyaz', 'Image/music/MU013.jpeg'),
-('West District', 19.99, 'An album with moody vibes and a blend of R&B and hip-hop influences.', 'R&B', 'Partynextdoor', 'Image/music/MU014.jpeg'),
-('The Beach', 19.99, 'A soulful R&B album that highlights emotional vulnerability and rich vocals.', 'R&B', 'Giveon', 'Image/music/MU015.jpeg'),
-
-('HUMBLE.', 19.99, 'A rap track with powerful beats and confident lyrics, showcasing Kendrick\'s lyrical prowess.', 'Rap', 'Kendrick Lamar', 'Image/music/MU016.jpeg'),
-('Sicko Mode', 19.99, 'A dynamic rap song with multiple beat switches and energetic delivery.', 'Rap', 'Travis Scott', 'Image/music/MU017.jpeg'),
-('Legends', 19.99, 'A heartfelt rap song reflecting on loss and personal struggles.', 'Rap', 'Juice WRLD', 'Image/music/MU018.jpeg'),
-('Middle Child', 19.99, 'A rap track that addresses J. Cole\'s position in the rap game and his journey.', 'Rap', 'J. Cole', 'Image/music/MU019.jpeg'),
-('Bank Account', 19.99, 'A rap song with a catchy hook and a smooth, laid-back vibe.', 'Rap', '21 Savage', 'Image/music/MU020.jpeg');
+INSERT INTO music (name, artist, price, description, genre, release_date, image_path) VALUES
+("A March Into Water", "Pierce The Veil", 19.99, "A powerful rock album with intense guitar riffs and emotional lyrics.", "Rock", "2023-02-10", "Image/music/MU001.jpeg"),
+("Voices", "Motionless In White", 19.99, "A heavy rock album with dark and haunting themes.", "Rock", "2022-03-04", "Image/music/MU002.jpeg"),
+("V.A.N", "Bad Omens", 19.99, "An album blending hard rock with emotional melodies and raw lyrics.", "Rock", "2022-02-24", "Image/music/MU003.jpeg"),
+("If You Can't Hang", "Sleeping With Sirens", 19.99, "A post-hardcore album that mixes high-energy music with heartfelt vocals.", "Rock", "2013-03-26", "Image/music/MU004.jpeg"),
+("Painkiller", "Three Days Grace", 19.99, "An album that explores pain and healing, featuring powerful rock anthems.", "Rock", "2014-04-08", "Image/music/MU005.jpeg"),
+("Save Your Tears", "The Weeknd", 19.99, "A pop album with catchy melodies and deep emotional themes.", "Pop", "2020-11-17", "Image/music/MU006.jpeg"),
+("Take Me to Church", "Hozier", 19.99, "A pop song with powerful lyrics that touch on themes of love and faith.", "Pop", "2013-09-13", "Image/music/MU007.jpeg"),
+("Hollywood's Bleeding", "Post Malone", 19.99, "A pop album that blends rock, rap, and pop with introspective themes.", "Pop", "2019-09-06", "Image/music/MU008.jpeg"),
+("Just Dance", "Lady Gaga", 19.99, "A fun and energetic pop anthem that gets you dancing.", "Pop", "2008-04-08", "Image/music/MU009.jpeg"),
+("Uptown Funk", "Bruno Mars", 19.99, "A funky and vibrant pop song that combines energetic beats with catchy lyrics.", "Pop", "2014-11-10", "Image/music/MU010.jpeg"),
+("Are U Ok", "Daniel Caesar", 19.99, "An R&B album with smooth melodies and introspective lyrics.", "R&B", "2021-06-25", "Image/music/MU011.jpeg"),
+("LA", "SIR", 19.99, "A soulful R&B album that mixes smooth vocals with deep emotions.", "R&B", "2019-08-30", "Image/music/MU012.jpeg"),
+("Rolling Stone", "Brent Faiyaz", 19.99, "A modern R&B album blending smooth beats and reflective lyrics.", "R&B", "2022-07-08", "Image/music/MU013.jpeg"),
+("West District", "Partynextdoor", 19.99, "An album with moody vibes and a blend of R&B and hip-hop influences.", "R&B", "2020-10-30", "Image/music/MU014.jpeg"),
+("The Beach", "Giveon", 19.99, "A soulful R&B album that highlights emotional vulnerability and rich vocals.", "R&B", "2021-03-12", "Image/music/MU015.jpeg"),
+("HUMBLE.", "Kendrick Lamar", 19.99, "A rap track with powerful beats and confident lyrics, showcasing Kendrick's lyrical prowess.", "Rap", "2017-03-30", "Image/music/MU016.jpeg"),
+("Sicko Mode", "Travis Scott", 19.99, "A dynamic rap song with multiple beat switches and energetic delivery.", "Rap", "2018-08-03", "Image/music/MU017.jpeg"),
+("Legends", "Juice WRLD", 19.99, "A heartfelt rap song reflecting on loss and personal struggles.", "Rap", "2018-06-19", "Image/music/MU018.jpeg"),
+("Middle Child", "J. Cole", 19.99, "A rap track that addresses J. Cole's position in the rap game and his journey.", "Rap", "2019-01-23", "Image/music/MU019.jpeg"),
+("Bank Account", "21 Savage", 19.99, "A rap song with a catchy hook and a smooth, laid-back vibe.", "Rap", "2017-07-07", "Image/music/MU020.jpeg");
