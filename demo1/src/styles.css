@@ -142,7 +142,6 @@ body {
     color: white;
     text-align: center;
     padding: 10px;
-    position: fixed;
     bottom: 0;
     width: 100%;
 }
@@ -409,7 +408,6 @@ h4 {
 
 p {
     font-size: 16px;
-    color: #555;
 }
 
 /* Media Queries for smaller screens (mobile and tablet) */
