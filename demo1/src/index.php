@@ -1,5 +1,8 @@
 <?php include('top.php'); ?>
-<script src="script.js"></script>
+<a href="cart.php" style="position: absolute; top: 60px; right: 200px; text-decoration: none;">
+    <img src="cart.png" alt="Cart" style="width: 40px;">
+</a>
+
 <div class="main-content">
     <h2>Welcome to Savana!</h2>
     <p>Explore our collection of books, posters, movies, and music.</p>
@@ -13,5 +16,6 @@
 </div>
 
 <?php include('bottom.php'); ?>
+
 
 

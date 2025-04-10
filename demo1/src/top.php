@@ -1,6 +1,5 @@
 <?php 
 session_start();
-include('database.php');
 ?>
 
 <!DOCTYPE html>
@@ -10,7 +9,6 @@ include('database.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Savana</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
     <script>
         function redirectToSignIn() {
             window.location.href = 'signin.php'; 
@@ -50,8 +48,8 @@ include('database.php');
             <img src="logo.png" alt="Logo" />
         </div>
         <div class="search-bar">
-        <input type="text" placeholder="Search for books, posters, movies, and music...">
-        <button>Search</button>
+            <input type="text" placeholder="Search for books, posters, movies, and music...">
+            <button>Search</button>
         </div>
         <div class="header-buttons">
             <?php if (isset($_SESSION['username'])): ?>
