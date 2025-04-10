@@ -139,3 +139,25 @@ INSERT INTO Posters (name, price, description, genre, artist, image_path) VALUES
 ('Rap Poster 3', 9.99, 'A heartfelt and melancholic poster of Juice WRLD, encapsulating his emotional depth and vulnerability in his music.', 'Rap', 'Juice WRLD', 'Image/posters/PS018.jpeg'),
 ('Rap Poster 4', 9.99, 'A reflective and powerful poster featuring J. Cole, known for his introspective and socially conscious rap.', 'Rap', 'J. Cole', 'Image/posters/PS019.jpeg'),
 ('Rap Poster 5', 9.99, 'A gritty and raw poster of 21 Savage, highlighting his streetwise lyrics and intense delivery.', 'Rap', '21 Savage', 'Image/posters/PS020.jpeg');
+
+CREATE TABLE cart ( 
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    product_id INT,
+    name VARCHAR(255),
+    price DECIMAL(10,2),
+    image VARCHAR(255),
+    quantity INT DEFAULT 1
+);
+
+CREATE TABLE orders (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    product_id INT NOT NULL,
+    name VARCHAR(255),
+    price DECIMAL(10,2),
+    image VARCHAR(255),
+    quantity INT DEFAULT 1,
+    order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
