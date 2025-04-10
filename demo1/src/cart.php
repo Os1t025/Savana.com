@@ -96,7 +96,7 @@ $stmt->close();
     </div>
     <div class="header-buttons">
         <a href="logout.php"><button>Log Out</button></a>
-        <a href="index.php"><button>Back to Home</button></a>
+        <a href="top.php"><button>Back to Home</button></a>
     </div>
 </div>
 

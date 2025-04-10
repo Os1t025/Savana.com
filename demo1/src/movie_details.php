@@ -1,6 +1,7 @@
 <?php
+include('top2.php');
 // movie_details.php (separate file)
-$dotenvPath = __DIR__ . '/.env';
+$dotenvPath = __DIR__ . '/.env'; 
 
 if (file_exists($dotenvPath)) {
     $lines = file($dotenvPath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
@@ -27,6 +28,7 @@ $username = $_ENV['DB_USERNAME'] ?? null;
 $password = $_ENV['DB_PASSWORD'] ?? null;
 $dbname = $_ENV['DB_DATABASE'] ?? null;
 
+// Check if all necessary variables are set
 if ($servername === null || $username === null || $password === null || $dbname === null) {
     die("Database credentials not set in .env file.");
 }
@@ -58,24 +60,20 @@ $result = $stmt->get_result();
 
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
-    $movieId = $row['id'];
-    ?>
-
-    <h2><?= htmlspecialchars($row["movie_name"]) ?></h2>
-    <img src="<?= htmlspecialchars($row["movie_image"]) ?>" style="max-width: 300px;"><br>
-    <p>Description: <?= htmlspecialchars($row["description"]) ?></p>
-    <p>Price: $<?= htmlspecialchars($row["price"]) ?></p>
-
-    <form method="POST" action="add_to_cart.php">
-        <input type="hidden" name="type" value="movie">
-        <input type="hidden" name="id" value="<?= $movieId ?>">
-        <input type="hidden" name="name" value="<?= htmlspecialchars($row["movie_name"]) ?>">
-        <input type="hidden" name="price" value="<?= $row["price"] ?>">
-        <input type="hidden" name="image" value="<?= htmlspecialchars($row["movie_image"]) ?>">
-        <button type="submit">Add to Cart</button>
-    </form>
-
-    <?php
+    echo "<h2>" . htmlspecialchars($row["movie_name"]) . "</h2>";
+    echo "<img src='" . htmlspecialchars($row["movie_image"]) . "' style='max-width: 300px;'><br>";
+    echo "<p>Description: " . htmlspecialchars($row["description"]) . "</p>";
+    echo "<p>Price: $" . htmlspecialchars($row["price"]) . "</p>";
+    echo '
+        <form method="POST" action="add_to_cart.php">
+            <input type="hidden" name="type" value="movie">
+            <input type="hidden" name="id" value="' . $movieId . '">
+            <input type="hidden" name="name" value="' . htmlspecialchars($row["movie_name"]) . '">
+            <input type="hidden" name="price" value="' . htmlspecialchars($row["price"]) . '">
+            <input type="hidden" name="image" value="' . htmlspecialchars($row["movie_image"]) . '">
+            <button type="submit">Add to Cart</button>
+        </form> ';
+    echo "<button class='back-btn' onclick='window.history.back()'>Back</button>";
 } else {
     echo "<p>Movie not found.</p>";
 }
@@ -83,3 +81,12 @@ if ($result->num_rows > 0) {
 $stmt->close();
 $conn->close();
 ?>
+
+<script>
+function addToCart(movieId) {
+    alert("Movie ID " + movieId + " added to cart!");
+    // Implement your cart logic here
+}
+</script>
+<link rel="stylesheet" href="styles2.css">
+<?php include('bottom.php'); ?>
