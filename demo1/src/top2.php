@@ -79,9 +79,6 @@ include('database.php');
     <!-- Add some content here for logged-in users -->
     <div class="content">
     <?php if (isset($_SESSION['username'])): ?>
-        <h2 class="welcome-message">Welcome back, <?php echo htmlspecialchars($_SESSION['username']); ?>!</h2>
-        <p class="explore-message">Explore our products, manage your account, or check out the latest deals!</p>
-        <?php include('index2.php'); ?>
     <?php else: ?>
     <?php endif; ?>
 </div>
@@ -90,11 +87,3 @@ include('database.php');
 
 </body>
 </html>
-
-
-
-
-
-
-
-

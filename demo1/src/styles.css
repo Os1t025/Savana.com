@@ -428,6 +428,28 @@ p {
         max-width: 60%; 
     }
 }
+.search-item {
+    display: flex;
+    flex-direction: column;      /* Stack the image and text vertically */
+    align-items: center;         /* Center content horizontally */
+    justify-content: center;     /* Center content vertically */
+    text-align: center;          /* Ensure text is centered under the image */
+    padding: 10px;               /* Add some padding around the content */
+    border: 1px solid #ccc;     /* Optional: border around each search item */
+    margin: 10px;                /* Optional: space between each search item */
+    border-radius: 10px;         /* Optional: rounded corners */
+    background-color: #f9f9f9;  /* Optional: background color */
+}
+
+.search-item img {
+    width: 200px;                /* Fixed width for all images */
+    height: 300px;               /* Fixed height for all images */
+    object-fit: cover;           /* Ensures images are cropped to fit the container */
+    object-position: center;     /* Ensures the image is centered */
+    border-radius: 8px;          /* Optional: rounded corners for images */
+    margin-bottom: 10px;         /* Adds space between the image and text */
+}
+
 
 
 

@@ -1,5 +1,5 @@
 <?php include('top.php'); ?>
-
+<script src="script.js"></script>
 <div class="main-content">
     <h2>Welcome to Savana!</h2>
     <p>Explore our collection of books, posters, movies, and music.</p>

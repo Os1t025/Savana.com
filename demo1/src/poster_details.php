@@ -1,4 +1,5 @@
 <?php
+include('top2.php');
 // music_details.php (separate file)
 $dotenvPath = __DIR__ . '/.env'; 
 
@@ -65,6 +66,7 @@ if ($result->num_rows > 0) {
     echo "<p>Description: " . htmlspecialchars($row["description"]) . "</p>";
     echo "<p>Price: $" . htmlspecialchars($row["price"]) . "</p>";
     echo "<button onclick=\"addToCart(" . $movieId . ")\">Add to Cart</button>";
+    echo "<button class='back-btn' onclick='window.history.back()'>Back</button>";
 } else {
     echo "<p>Poster not found.</p>";
 }
@@ -79,3 +81,5 @@ function addToCart(postersId) {
     // Implement your cart logic here
 }
 </script>
+<link rel="stylesheet" href="styles2.css">
+<?php include('bottom.php'); ?>
