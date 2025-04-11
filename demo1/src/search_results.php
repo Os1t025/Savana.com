@@ -38,7 +38,14 @@ if (isset($_GET['query'])) {
                     <h3><?php echo $name; ?></h3>
                     <p><?php echo $description; ?></p>
                     <p>Price: $<?php echo $price; ?></p>
-                    <button onclick="addToCart(<?php echo $id; ?>, '<?php echo $type; ?>')">Add to Cart</button>
+                    <form method="POST" action="add_to_cart.php">
+                        <input type="hidden" name="type" value="<?php echo $type; ?>"> 
+                        <input type="hidden" name="id" value="<?php echo $id; ?>"> 
+                        <input type="hidden" name="name" value="<?php echo htmlspecialchars($name); ?>">
+                        <input type="hidden" name="price" value="<?php echo htmlspecialchars($price); ?>">
+                        <input type="hidden" name="image" value="<?php echo htmlspecialchars($imagePath); ?>">
+                        <button type="submit">Add to Cart</button>
+                    </form>
                 </div>
             </div>
             <?php
@@ -51,25 +58,6 @@ if (isset($_GET['query'])) {
 }
 ?>
 
-<script>
-function addToCart(itemId, itemType) {
-    alert(itemType + " ID " + itemId + " added to cart!");
-    // Implement cart logic here, for example, adding the item to a session or local storage
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "add_to_cart.php", true);
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    xhr.send("id=" + itemId + "&type=" + itemType);
-
-    // You can also update the cart count dynamically using JavaScript after adding an item
-    updateCartCount();
-}
-
-function updateCartCount() {
-    var cartCount = parseInt(localStorage.getItem("cartCount")) || 0;
-    localStorage.setItem("cartCount", cartCount + 1);
-    document.getElementById("nav-cart-count").textContent = cartCount + 1;
-}
-</script>
 
 <link rel="stylesheet" href="styles.css">
 

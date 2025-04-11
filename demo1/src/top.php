@@ -1,6 +1,23 @@
 <?php 
 session_start();
 include('database.php');
+
+$cart_count = 0;
+
+if (isset($_SESSION['user_id'])) {
+    $user_id = $_SESSION['user_id'];
+    
+    $query = "SELECT COUNT(*) AS cart_count FROM cart WHERE user_id = ?";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param("i", $user_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    
+    if ($row = $result->fetch_assoc()) {
+        $cart_count = $row['cart_count'];
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -63,9 +80,10 @@ include('database.php');
                 
                 <button class="logout-btn" onclick="logout()">Log Out</button>
                 
-                <a href="cart.php" aria-label="0 items in cart" class="nav-a nav-a-2 nav-progressive-attribute" id="nav-cart">
+                <!-- Cart Button -->
+                <a href="cart.php" aria-label="<?php echo $cart_count; ?> items in cart" class="nav-a nav-a-2 nav-progressive-attribute" id="nav-cart">
                     <div id="nav-cart-count-container">
-                        <span id="nav-cart-count" aria-hidden="true" class="nav-cart-count nav-cart-0 nav-progressive-attribute nav-progressive-content">0</span>
+                        <span id="nav-cart-count" aria-hidden="true" class="nav-cart-count nav-cart-<?php echo $cart_count; ?> nav-progressive-attribute nav-progressive-content"><?php echo $cart_count; ?></span>
                         <span class="nav-cart-icon nav-sprite"></span>
                     </div>
                 </a>
@@ -86,10 +104,9 @@ include('database.php');
     <?php endif; ?>
 </div>
 
-
-
 </body>
 </html>
+
 
 
 
