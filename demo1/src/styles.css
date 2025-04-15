@@ -451,6 +451,19 @@ p {
 }
 
 
+.section-label {
+    font-size: 22px;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 30px 0 10px;
+    padding-left: 10px;
+    border-left: 5px solid #f8b400;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+
 
 
 
